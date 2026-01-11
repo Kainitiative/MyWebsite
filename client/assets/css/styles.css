@@ -185,12 +185,13 @@ img {
 }
 
 .logo-img {
-    height: 45px;
+    height: 60px;
     width: auto;
+    filter: invert(1);
 }
 
 .dark .logo-img {
-    filter: invert(1);
+    filter: none;
 }
 
 .site-nav ul {
@@ -675,10 +676,9 @@ input:focus, select:focus, textarea:focus {
 }
 
 .footer-logo {
-    height: 50px;
+    height: 70px;
     width: auto;
     margin-bottom: 1rem;
-    filter: invert(1);
 }
 
 .footer-col h4 {
