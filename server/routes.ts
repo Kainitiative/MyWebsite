@@ -15,7 +15,7 @@ export async function registerRoutes(
   // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
 
   // Serve static HTML pages
-  const staticPages = ['privacy.html', 'terms.html', 'thanks.html'];
+  const staticPages = ['privacy.html', 'terms.html', 'thanks.html', 'demo-plumber.html', 'demo-therapist.html'];
   
   staticPages.forEach(page => {
     app.get(`/${page}`, async (req, res) => {
