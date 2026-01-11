@@ -143,6 +143,17 @@ img {
     color: white;
 }
 
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    gap: 0.5rem;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1da851;
+    color: white;
+}
+
 /* Header */
 .site-header {
     position: fixed;
