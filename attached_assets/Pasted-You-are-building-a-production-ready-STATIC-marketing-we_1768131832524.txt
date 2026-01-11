@@ -1,0 +1,141 @@
+You are building a production-ready STATIC marketing website for patrickryan.ie (Patrick Ryan — Simple Websites for Small Irish Businesses).
+
+IMPORTANT CONSTRAINTS
+- Use ONLY: HTML + CSS + vanilla JS. NO React, NO build tools, NO npm, NO bundlers.
+- The site must run by opening index.html directly (and also on simple shared hosting like LetsHost).
+- Use clean, readable code and comments. Keep files small and well-structured.
+- Ensure all typography and characters render correctly (€, em dash, curly quotes). Use UTF-8 everywhere.
+- Accessibility: semantic HTML, keyboard navigable, visible focus states, good contrast, aria labels where needed.
+- Performance: Lighthouse-minded, lazy-load images, minimal JS, CSS variables, reduce motion respects prefers-reduced-motion.
+
+DELIVERABLES (FILES)
+Create this folder structure:
+/
+  index.html
+  privacy.html
+  terms.html
+  thanks.html
+  assets/
+    css/styles.css
+    js/main.js
+    img/ (use placeholder images or simple SVG shapes; no external image dependencies)
+Include a README.md explaining how to deploy to LetsHost and how to update text/images.
+
+BRAND / TONE
+- Professional, friendly, Irish local vibe (Tallaght/Dublin).
+- Simple and clear: “I build clean, fast brochure websites for small businesses.”
+- Positioning: affordable, reliable, no hassle, ongoing support.
+- Name: Patrick Ryan
+- Services: brochure websites, small business sites, landing pages, basic SEO, Google Business Profile help, content updates, contact forms.
+- Business model: setup fee + monthly hosting/support. Use InvoiceEase offline for invoicing/back-office.
+
+SITE CONTENT REQUIREMENTS
+1) HERO SECTION
+- Headline: “Simple Websites for Small Irish Businesses.”
+- Subheadline: “Clean, fast websites built by Patrick Ryan. One-off setup + low monthly hosting/support. No hassle.”
+- Buttons: “Get a Quote” (scroll to form) and “See Pricing” (scroll to pricing)
+
+2) TRUST / BENEFITS STRIP
+3–5 bullet points with icons (use inline SVG):
+- Fast & mobile-first
+- SEO-ready
+- Easy updates (you message me, I update it)
+- Secure hosting & backups
+- Friendly local support
+
+3) SERVICES SECTION
+Cards for:
+- Brochure Website (1–5 pages)
+- Landing Page (single page)
+- Site Refresh (upgrade an old site)
+- Add-ons (extra pages, photo gallery, copy help, Google Maps, basic SEO)
+
+4) PRICING SECTION (VERY IMPORTANT)
+Create 3 pricing cards with clear inclusions. Use € pricing.
+- Starter: €300 setup + €20/month
+  Includes: 1–3 pages, mobile-friendly, contact form, basic SEO, domain connection, GDPR cookie banner (simple), 1 round of edits, hosting & SSL
+- Standard: €450 setup + €25/month
+  Includes: 1–5 pages, everything in Starter, gallery, Google Map, 2 rounds of edits, Google Business Profile guidance
+- Premium: €650 setup + €35/month
+  Includes: 6–10 pages, everything in Standard, priority updates, simple blog/news page (optional static), monthly performance check
+Add small print under pricing:
+- “Domain not included (you own it).”
+- “Cancel anytime — your content is yours.”
+- “No client logins. I handle updates quickly via email/text.”
+Include a “Compare” mini table (responsive) showing which plan includes what.
+
+5) PROCESS SECTION (“How it works”)
+A 4-step timeline:
+- 1) Quick chat + quote
+- 2) You send logo/photos/text (or I help)
+- 3) I build and send a preview link
+- 4) Go live + ongoing support
+
+6) PORTFOLIO / EXAMPLES
+Create 3 example project cards with placeholders:
+- Local Trades (Plumber/Electrician)
+- Community/Charity
+- Small Shop/Café
+Each card has a “View Demo” button (anchor to #contact with “ask to see demos” note).
+
+7) TESTIMONIALS
+Add 3 friendly testimonials (placeholder) with Irish tone, not over the top.
+
+8) FAQ
+Include FAQs like:
+- How long does it take? (Typical 3–7 days once content received)
+- Do I need to write the text? (No, you can send bullet points)
+- Can you update it later? (Yes, message me)
+- Do you provide email addresses? (Optional add-on / forwarder)
+- What about GDPR? (Basic guidance + cookie/consent banner)
+
+9) CONTACT / QUOTE FORM (must work)
+Create a form with:
+- Name
+- Business name
+- Phone
+- Email
+- Business type
+- What do you need? (checkboxes)
+- Preferred package (Starter/Standard/Premium)
+- Message
+When submitted:
+- Validate client-side
+- Redirect to thanks.html
+IMPORTANT: Since it’s static, do NOT build a backend. Instead integrate Formspree (or a similar service) using placeholder action URL and explain in README how to replace it.
+Also add clickable contact options: email, phone, WhatsApp link, and location: Tallaght, Dublin.
+
+10) FOOTER
+- Quick links
+- Social placeholders
+- GDPR links to privacy.html and terms.html
+- Copyright
+
+DESIGN / UI REQUIREMENTS (“bells and whistles” but classy)
+- Modern minimalist design, Apple-like spacing, clean typography.
+- Use Google Font “Inter” (load via Google Fonts).
+- Smooth scrolling, section reveal on scroll (fade/slide) using IntersectionObserver.
+- Subtle hover micro-interactions on cards and buttons.
+- Sticky header with active section highlighting while scrolling.
+- Mobile menu (hamburger) with animated open/close.
+- Back-to-top button appears after scroll.
+- Dark mode toggle (store preference in localStorage).
+- Use prefers-reduced-motion to disable animations for users who prefer it.
+- Use CSS variables for theme colors.
+- Provide a simple cookie banner (static) with Accept/Reject; store preference in localStorage; if rejected, don’t load any analytics (no analytics needed, just implement the banner logic).
+
+SEO / TECH
+- Proper meta title/description, Open Graph tags, favicon (simple SVG).
+- Add JSON-LD LocalBusiness schema with Patrick Ryan, location Dublin, and service type web design.
+- Ensure pages have unique titles.
+- Make sure euro symbol works correctly.
+- Add 404-friendly note in README for shared hosting.
+
+OUTPUT QUALITY
+- Make it look real and polished with sensible spacing and typography.
+- No lorem ipsum; write real copy suitable for Irish small businesses.
+- Keep JS small and robust (no libraries).
+- Provide instructions in README for deployment to LetsHost (FTP upload) and how to point domain to hosting (nameservers/DNS A record) at a high level.
+- Ensure everything works offline without a server except the form submission (which is configured via Formspree placeholder).
+
+Finally: Generate all files exactly as requested, with complete code, ready to deploy.
