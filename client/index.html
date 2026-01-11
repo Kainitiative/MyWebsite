@@ -224,34 +224,58 @@
     <section id="portfolio" class="section portfolio-section">
         <div class="container">
             <h2 class="section-title">Example Work</h2>
-            <div class="cards-grid">
-                <div class="card portfolio-card">
-                    <div class="placeholder-img" style="background-color: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #64748b;">Trades Demo</div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+            </div>
+
+            <div class="portfolio-grid" id="portfolioGrid">
+                <div class="card portfolio-card" data-category="business" data-url="https://www.sharpedesigns.ie/" data-title="Sharpe Designs">
+                    <div class="portfolio-img">
+                        <div class="portfolio-placeholder">Sharpe Designs</div>
+                    </div>
                     <div class="card-content">
-                        <h3>Local Trades</h3>
-                        <p>Plumbers, Electricians, Carpenters</p>
-                        <a href="#contact" class="link-btn">Ask to see demo &rarr;</a>
+                        <h3>Sharpe Designs</h3>
+                        <p>Professional design services website</p>
+                        <button class="link-btn preview-btn">Preview Site</button>
                     </div>
                 </div>
-                <div class="card portfolio-card">
-                    <div class="placeholder-img" style="background-color: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #64748b;">Charity Demo</div>
-                    <div class="card-content">
-                        <h3>Community / Charity</h3>
-                        <p>Local clubs, non-profits, groups</p>
-                        <a href="#contact" class="link-btn">Ask to see demo &rarr;</a>
+                <div class="card portfolio-card" data-category="community" data-url="https://www.tallaghtrehabproject.ie/" data-title="Tallaght Rehab Project">
+                    <div class="portfolio-img">
+                        <div class="portfolio-placeholder">Tallaght Rehab Project</div>
                     </div>
-                </div>
-                <div class="card portfolio-card">
-                    <div class="placeholder-img" style="background-color: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #64748b;">Retail Demo</div>
                     <div class="card-content">
-                        <h3>Small Shop / Café</h3>
-                        <p>Coffee shops, boutiques, local retail</p>
-                        <a href="#contact" class="link-btn">Ask to see demo &rarr;</a>
+                        <h3>Tallaght Rehab Project</h3>
+                        <p>Community rehabilitation services</p>
+                        <button class="link-btn preview-btn">Preview Site</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Portfolio Preview Modal -->
+    <div class="portfolio-modal" id="portfolioModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Site Preview</h3>
+                <div class="modal-actions">
+                    <a href="#" id="modalNewTab" target="_blank" class="btn btn-sm btn-secondary">Open in New Tab</a>
+                    <button class="modal-close" id="modalClose">&times;</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="iframe-loader" id="iframeLoader">Loading preview...</div>
+                <iframe id="previewFrame" src="" frameborder="0"></iframe>
+                <div class="iframe-error" id="iframeError" style="display: none;">
+                    <p>This site cannot be previewed in a frame.</p>
+                    <a href="#" id="errorNewTab" target="_blank" class="btn btn-primary">Open in New Tab</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Testimonials -->
     <section class="section testimonials-section">

@@ -130,4 +130,95 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Portfolio Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            portfolioCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // Portfolio Modal
+    const modal = document.getElementById('portfolioModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalNewTab = document.getElementById('modalNewTab');
+    const modalClose = document.getElementById('modalClose');
+    const previewFrame = document.getElementById('previewFrame');
+    const iframeLoader = document.getElementById('iframeLoader');
+    const iframeError = document.getElementById('iframeError');
+    const errorNewTab = document.getElementById('errorNewTab');
+
+    function openModal(url, title) {
+        modalTitle.textContent = title;
+        modalNewTab.href = url;
+        errorNewTab.href = url;
+        previewFrame.src = '';
+        iframeLoader.style.display = 'block';
+        iframeError.style.display = 'none';
+        previewFrame.style.display = 'none';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        previewFrame.src = url;
+        
+        previewFrame.onload = function() {
+            iframeLoader.style.display = 'none';
+            previewFrame.style.display = 'block';
+        };
+
+        setTimeout(() => {
+            if (iframeLoader.style.display !== 'none') {
+                iframeLoader.style.display = 'none';
+                iframeError.style.display = 'block';
+            }
+        }, 5000);
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        previewFrame.src = '';
+        document.body.style.overflow = '';
+    }
+
+    portfolioCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.preview-btn') || e.target.closest('.portfolio-img')) {
+                const url = card.dataset.url;
+                const title = card.dataset.title;
+                openModal(url, title);
+            }
+        });
+    });
+
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
 });
