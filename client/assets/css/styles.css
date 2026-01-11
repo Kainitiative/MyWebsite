@@ -271,6 +271,16 @@ html:not(.dark) .icon-moon { display: block; }
     max-width: 800px;
 }
 
+.hero-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.dark .hero-logo {
+    filter: invert(1);
+}
+
 .hero-section h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
@@ -679,6 +689,7 @@ input:focus, select:focus, textarea:focus {
     height: 70px;
     width: auto;
     margin-bottom: 1rem;
+    filter: invert(1);
 }
 
 .footer-col h4 {
