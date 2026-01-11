@@ -1,15 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Ryan — Simple Websites for Small Irish Businesses</title>
+    <meta name="description" content="Clean, fast brochure websites for small businesses in Ireland. Built by Patrick Ryan in Tallaght. One-off setup + low monthly hosting. No hassle.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Patrick Ryan — Simple Websites for Small Irish Businesses">
+    <meta property="og:description" content="Affordable, reliable websites for Irish businesses. No hassle, ongoing support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://patrickryan.ie">
+    <meta property="og:image" content="assets/img/og-image.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Patrick Ryan Web Design",
+      "image": "",
+      "@id": "",
+      "url": "https://patrickryan.ie",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Tallaght",
+        "addressRegion": "Dublin",
+        "postalCode": "",
+        "addressCountry": "IE"
+      },
+      "priceRange": "€300-€650",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo">Patrick Ryan</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact" class="btn btn-sm">Get a Quote</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1>Simple Websites for Small Irish Businesses.</h1>
+            <p class="hero-sub">Clean, fast websites built by Patrick Ryan. One-off setup + low monthly hosting/support. No hassle.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get a Quote</a>
+                <a href="#pricing" class="btn btn-secondary">See Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="trust-strip">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                <span>Fast &amp; Mobile-first</span>
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>SEO-ready</span>
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                <span>Easy Updates</span>
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span>Secure Hosting</span>
+            </div>
+            <div class="trust-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>Friendly Local Support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <h2 class="section-title">What I Do</h2>
+            <div class="cards-grid">
+                <div class="card service-card">
+                    <h3>Brochure Website</h3>
+                    <p>Perfect for most businesses. 1–5 pages showcasing your services, about info, and contact details.</p>
+                </div>
+                <div class="card service-card">
+                    <h3>Landing Page</h3>
+                    <p>A single, high-impact page designed to convert visitors for a specific campaign or product.</p>
+                </div>
+                <div class="card service-card">
+                    <h3>Site Refresh</h3>
+                    <p>Have an old site that looks dated? I can rebuild it to be modern, fast, and mobile-friendly.</p>
+                </div>
+                <div class="card service-card">
+                    <h3>Add-ons</h3>
+                    <p>Need more? I can add photo galleries, Google Maps, copy writing help, or advanced SEO.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section pricing-section">
+        <div class="container">
+            <h2 class="section-title">Transparent Pricing</h2>
+            <div class="cards-grid pricing-grid">
+                <div class="card pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="price">€300 <span class="period">setup</span></div>
+                        <div class="sub-price">+ €20/month</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>1–3 Pages</li>
+                        <li>Mobile-friendly</li>
+                        <li>Contact Form</li>
+                        <li>Basic SEO</li>
+                        <li>Domain Connection</li>
+                        <li>GDPR Cookie Banner</li>
+                        <li>1 Round of Edits</li>
+                        <li>Hosting &amp; SSL Included</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline full-width">Choose Starter</a>
+                </div>
+                <div class="card pricing-card featured">
+                    <div class="pricing-header">
+                        <div class="badge">Most Popular</div>
+                        <h3>Standard</h3>
+                        <div class="price">€450 <span class="period">setup</span></div>
+                        <div class="sub-price">+ €25/month</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><strong>1–5 Pages</strong></li>
+                        <li>Everything in Starter</li>
+                        <li>Photo Gallery</li>
+                        <li>Google Map Embed</li>
+                        <li><strong>2 Rounds of Edits</strong></li>
+                        <li>Google Business Profile Help</li>
+                        <li>Hosting &amp; SSL Included</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary full-width">Choose Standard</a>
+                </div>
+                <div class="card pricing-card">
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="price">€650 <span class="period">setup</span></div>
+                        <div class="sub-price">+ €35/month</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>6–10 Pages</li>
+                        <li>Everything in Standard</li>
+                        <li>Priority Updates</li>
+                        <li>Simple Blog/News Page</li>
+                        <li>Monthly Performance Check</li>
+                        <li>Hosting &amp; SSL Included</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline full-width">Choose Premium</a>
+                </div>
+            </div>
+            
+            <div class="pricing-notes">
+                <p><strong>Note:</strong> Domain name not included (you own it, costs ~€10-€20/year). I'll help you buy it.</p>
+                <p>Cancel anytime — your content is yours to keep.</p>
+                <p>No client logins required. I handle all updates quickly via email or text.</p>
+            </div>
+
+            <!-- Compare Table -->
+            <div class="compare-table-wrapper">
+                <h3>Quick Comparison</h3>
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Starter</th>
+                            <th>Standard</th>
+                            <th>Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pages</td>
+                            <td>1–3</td>
+                            <td>1–5</td>
+                            <td>6–10</td>
+                        </tr>
+                        <tr>
+                            <td>Updates</td>
+                            <td>Standard</td>
+                            <td>Standard</td>
+                            <td>Priority</td>
+                        </tr>
+                        <tr>
+                            <td>Google Business Help</td>
+                            <td>-</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+                         <tr>
+                            <td>Blog / News</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section process-section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Quick Chat &amp; Quote</h3>
+                        <p>We discuss what you need. I give you a clear price. No surprises.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Content Gathering</h3>
+                        <p>You send me your logo, photos, and text. Don't have them? I can help guide you.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Build &amp; Review</h3>
+                        <p>I build your site and send you a private link to preview. We tweak it until you're happy.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Go Live</h3>
+                        <p>We launch your site to the world. I handle the technical hosting and support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Example Work</h2>
+            <div class="cards-grid">
+                <div class="card portfolio-card">
+                    <div class="placeholder-img" style="background-color: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #64748b;">Trades Demo</div>
+                    <div class="card-content">
+                        <h3>Local Trades</h3>
+                        <p>Plumbers, Electricians, Carpenters</p>
+                        <a href="#contact" class="link-btn">Ask to see demo &rarr;</a>
+                    </div>
+                </div>
+                <div class="card portfolio-card">
+                    <div class="placeholder-img" style="background-color: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #64748b;">Charity Demo</div>
+                    <div class="card-content">
+                        <h3>Community / Charity</h3>
+                        <p>Local clubs, non-profits, groups</p>
+                        <a href="#contact" class="link-btn">Ask to see demo &rarr;</a>
+                    </div>
+                </div>
+                <div class="card portfolio-card">
+                    <div class="placeholder-img" style="background-color: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #64748b;">Retail Demo</div>
+                    <div class="card-content">
+                        <h3>Small Shop / Café</h3>
+                        <p>Coffee shops, boutiques, local retail</p>
+                        <a href="#contact" class="link-btn">Ask to see demo &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Locals Say</h2>
+            <div class="cards-grid">
+                <div class="card testimonial-card">
+                    <p class="quote">"Patrick made the whole process deadly simple. I didn't have a clue about websites, but he sorted everything."</p>
+                    <p class="author">— John D., Tallaght Plumber</p>
+                </div>
+                <div class="card testimonial-card">
+                    <p class="quote">"Great price and very responsive. Whenever I need to change a price or add a photo, it's done same day."</p>
+                    <p class="author">— Sarah M., Café Owner</p>
+                </div>
+                <div class="card testimonial-card">
+                    <p class="quote">"Exactly what we needed for the community centre. Simple, fast, and easy to find on Google now."</p>
+                    <p class="author">— Liam O., Community Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How long does it take?</h3>
+                    <p>Typically 3–7 days once I have your content (text and photos).</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need to write the text?</h3>
+                    <p>It's best if you do, but bullet points are fine! I can turn them into proper website text for you.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I update it later?</h3>
+                    <p>Yes, just message or email me. Small updates are included in your monthly support.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you provide email addresses?</h3>
+                    <p>I can set up a professional email (e.g., info@yourbusiness.ie) as an optional add-on.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What about GDPR?</h3>
+                    <p>I include a standard cookie banner and privacy policy link to help you comply.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Get a Free Quote</h2>
+            <p class="text-center mb-2">Fill out the form below and I'll get back to you within 24 hours.</p>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <strong>Location</strong>
+                        <p>Tallaght, Dublin</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Email</strong>
+                        <p><a href="mailto:hello@patrickryan.ie">hello@patrickryan.ie</a></p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Phone / WhatsApp</strong>
+                        <p><a href="tel:+353870000000">087 000 0000</a></p>
+                    </div>
+                </div>
+
+                <!-- Formspree Form -->
+                <form action="https://formspree.io/f/PLACEHOLDER" method="POST" class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business">
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Business Type</label>
+                        <select id="type" name="type">
+                            <option value="trade">Trade (Plumber, Electrician, etc.)</option>
+                            <option value="retail">Shop / Retail</option>
+                            <option value="hospitality">Café / Restaurant</option>
+                            <option value="service">Professional Services</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Package</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="package" value="starter"> Starter</label>
+                            <label><input type="radio" name="package" value="standard" checked> Standard</label>
+                            <label><input type="radio" name="package" value="premium"> Premium</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>What do you need? (Optional)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="needs" value="new-site"> New Website</label>
+                            <label><input type="checkbox" name="needs" value="redesign"> Redesign</label>
+                            <label><input type="checkbox" name="needs" value="seo"> Google/SEO Help</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Send Request</button>
+                    <p class="form-footer">I will never share your details.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Patrick Ryan</h4>
+                <p>Simple, affordable websites for Irish small businesses.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Patrick Ryan. All rights reserved.</p>
+            <p>Tallaght, Dublin.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" hidden>
+        <div class="container cookie-content">
+            <p>I use cookies to ensure you get the best experience on my website. <a href="privacy.html">Learn more</a>.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn btn-sm btn-primary">Accept</button>
+                <button id="reject-cookies" class="btn btn-sm btn-outline">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
