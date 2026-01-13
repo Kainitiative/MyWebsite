@@ -276,14 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Check if using placeholder Formspree action (demo mode)
-            const action = form.getAttribute('action');
-            if (action.includes('PLACEHOLDER')) {
-                e.preventDefault();
-                alert('This is a demo form. In production, replace PLACEHOLDER in the form action with your Formspree form ID.');
-                // Simulate success for demo purposes
-                window.location.href = 'thanks.html';
-            }
+            // Form will be submitted to send-mail.php which handles the email
         });
     }
 
