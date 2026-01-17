@@ -33,10 +33,16 @@ Preferred communication style: Simple, everyday language.
 - **Drizzle/PostgreSQL schema exists**: But is placeholder/unused - the site doesn't require a database
 
 ### Design Patterns
-- **Mobile-first responsive design**: CSS handles all screen sizes
+- **Mobile-first responsive design**: CSS uses `min-width` media queries exclusively
+  - Base styles = mobile (no media query)
+  - 481px+ = small tablets (trust strip horizontal, portfolio 2-col)
+  - 769px+ = tablets (horizontal nav, grids expand, hide mobile CTA bar)
+  - 993px+ = desktops (full layouts, header phone visible)
+  - 1201px+ = large desktops (who-grid 6 columns)
 - **CSS custom properties**: Colors and spacing defined as variables for easy customization
 - **Semantic HTML**: Proper use of `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>` for accessibility
 - **Progressive enhancement**: Core content works without JavaScript
+- **Scroll animations**: Intersection Observer for fade-in effects, respects `prefers-reduced-motion`
 
 ## External Dependencies
 
