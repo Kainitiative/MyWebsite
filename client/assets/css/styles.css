@@ -73,26 +73,6 @@
     --mobile-cta-height: 60px;
 }
 
-/* ============================================================
-   DARK MODE COLORS
-   These are automatically applied when dark mode is enabled
-   ============================================================ */
-.dark {
-    --primary: #3b82f6;
-    --primary-dark: #60a5fa;
-    --primary-light: #2563eb;
-    --secondary: #94a3b8;
-    --accent: #f8fafc;
-    --background: #0f172a;
-    --surface: #1e293b;
-    --surface-alt: #334155;
-    --text: #cbd5e1;
-    --text-heading: #f1f5f9;
-    --border: #334155;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-}
 
 /* ============================================================
    2. RESET & BASE STYLES
@@ -276,9 +256,6 @@ img {
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.dark .site-header {
-    background-color: rgba(15, 23, 42, 0.95);
-}
 
 .header-container {
     display: flex;
@@ -356,23 +333,6 @@ img {
 .hamburger::before { top: -8px; }
 .hamburger::after { top: 8px; }
 
-/* Theme toggle (dark mode button) */
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-heading);
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.icon-sun, .icon-moon {
-    display: none;
-}
-
-.dark .icon-sun { display: block; }
-html:not(.dark) .icon-moon { display: block; }
 
 /* ============================================================
    5. HERO SECTION
@@ -415,9 +375,6 @@ html:not(.dark) .icon-moon { display: block; }
     display: block;
 }
 
-.dark .hero-logo {
-    filter: invert(1);
-}
 
 /* Hero headline */
 .hero-section h1 {
@@ -1244,9 +1201,6 @@ textarea.error:focus {
     box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
-.dark .mobile-cta-bar {
-    background-color: var(--surface);
-}
 
 .mobile-cta-btn {
     flex: 1;

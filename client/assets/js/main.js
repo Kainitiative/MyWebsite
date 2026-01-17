@@ -43,32 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ============================================================
-       2. DARK MODE TOGGLE
-       Switches between light and dark color themes
-       Saves preference to localStorage
-       ============================================================ */
-    const themeToggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-
-    // Check for saved theme preference or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Apply saved theme or system preference
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        html.classList.add('dark');
-    }
-
-    // Toggle theme on button click
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const isDark = html.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        });
-    }
-
-    /* ============================================================
        3. STICKY HEADER EFFECTS
        Adds shadow to header when scrolling
        Highlights active section in navigation
