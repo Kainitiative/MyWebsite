@@ -411,4 +411,108 @@ document.addEventListener('DOMContentLoaded', () => {
         // Modern browsers support native lazy loading
     }
 
+    /* ============================================================
+       SCROLL ANIMATIONS (Intersection Observer)
+       Triggers fade-in and stagger animations when elements
+       come into view while scrolling
+       ============================================================ */
+    
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (!prefersReducedMotion) {
+        // Elements that fade in on scroll
+        const fadeElements = document.querySelectorAll('.section-title, .fade-in');
+        
+        // Elements that stagger in (grid items)
+        const staggerElements = document.querySelectorAll('.service-card, .who-item, .portfolio-card, .testimonial-card, .faq-item');
+        
+        // Timeline items
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        // Create observer for fade-in elements
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        // Observe fade elements
+        fadeElements.forEach(el => {
+            fadeObserver.observe(el);
+        });
+        
+        // Create observer for stagger elements
+        const staggerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add stagger-item class if not present
+                    entry.target.classList.add('stagger-item');
+                    // Trigger animation
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, 50);
+                    staggerObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        });
+        
+        // Observe stagger elements
+        staggerElements.forEach(el => {
+            el.classList.add('stagger-item');
+            staggerObserver.observe(el);
+        });
+        
+        // Create observer for timeline items
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        // Observe timeline items
+        timelineItems.forEach(el => {
+            timelineObserver.observe(el);
+        });
+    } else {
+        // If reduced motion preferred, make everything visible immediately
+        document.querySelectorAll('.section-title, .fade-in, .stagger-item, .timeline-item').forEach(el => {
+            el.classList.add('visible');
+        });
+    }
+
+    /* ============================================================
+       TOUCH FEEDBACK FOR MOBILE
+       Adds subtle visual feedback on touch devices
+       ============================================================ */
+    if ('ontouchstart' in window) {
+        // Add touch feedback class to interactive elements
+        const touchElements = document.querySelectorAll('.btn, .card, .who-item, .filter-btn, .mobile-cta-btn');
+        
+        touchElements.forEach(el => {
+            el.addEventListener('touchstart', () => {
+                el.style.transform = 'scale(0.98)';
+            }, { passive: true });
+            
+            el.addEventListener('touchend', () => {
+                el.style.transform = '';
+            }, { passive: true });
+        });
+    }
+
 });
