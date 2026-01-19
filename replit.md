@@ -9,9 +9,19 @@ This is a marketing website for Patrick Ryan, offering web design services for s
 
 The static site is the primary deliverable - it can be deployed by simply uploading the `/client` folder contents to any web server.
 
-## User Preferences
+### CRM & Management System (Planned)
+- **Security First Architecture**: Triple-database segregation (Auth, Vault, Operations) to isolate PII from business data.
+- **Hosting Environment**: PHP-based backend designed for cPanel/FTP deployment on patrickryan.ie.
+- **First-Run Automation**: Security wizard that auto-creates databases and handles initial encrypted configuration.
+- **Core Modules**: 
+    - Client Vault (Encrypted PII)
+    - Service Tracker (Domains, Hosting, Social Media)
+    - Reminder Engine (Daily automated briefs for renewals and tasks)
 
+## User Preferences
 Preferred communication style: Simple, everyday language.
+Maintenance: No client logins; Patrick handles all updates via email/text.
+Architecture: Mobile-first, vanilla technologies only for production.
 
 ## System Architecture
 
