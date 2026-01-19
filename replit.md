@@ -17,6 +17,9 @@ The static site is the primary deliverable - it can be deployed by simply upload
     - Client Vault (Encrypted PII)
     - Service Tracker (Domains, Hosting, Social Media)
     - Reminder Engine (Daily automated briefs for renewals and tasks)
+    - Client "Health" Indicators (Traffic-light status for quick oversight)
+    - Encrypted Document Vault (Secure storage for PDFs and contracts)
+    - Communication Shortcuts (One-click WhatsApp/Email templates)
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
